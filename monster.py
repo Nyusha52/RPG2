@@ -12,7 +12,7 @@ class Monster():
         return Monster.impact_strength_monster
 
     def Hp(self):
-        Monster.hp_monster = random.randint(1, 5)
+        Monster.hp_monster = random.randint(50, 100)
         return Monster.hp_monster
 
     def type_attack(self):

@@ -29,3 +29,7 @@ class Item():
             print("Вы ввели недопустимое значение")
             new_weapon = input("введите 1 или 2:")
         return new_weapon
+
+    def knight_dodged(self):
+        knight_dodged = random.randint(0, 10)
+        return knight_dodged

@@ -15,8 +15,8 @@ class Knight():
         return Knight.have_weapon["impact_strength_archer"]
 
     def ImpactStrengthMagician(self):
-        Knight.impact_strength_magician = random.randint(20, 100)
-        return Knight.impact_strength_magician
+        Knight.have_weapon["impact_strength_magician"] = random.randint(20, 100)
+        return Knight.have_weapon["impact_strength_magician"]
 
     def Hp(self):
         Knight.hp = random.randint(50, 100)
