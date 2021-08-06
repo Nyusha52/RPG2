@@ -60,6 +60,14 @@ def game() -> None:
                 print(
                     f"ЛУК.сила удара увеличена на 10 и равна {si_knight_archer} "
                 )
+        if move == "arrows":
+            if Knight.have_weapon['impact_strength_archer'] == None:
+                print(
+                    f"Стрелы. забрать - 1 или отказаться - 2."
+                )
+                number = item.new_weapon()
+                if number == "1":
+                    k.ImpactStrengthArrow()
         if move == "magician book":
             if Knight.have_weapon['impact_strength_magician'] == None:
                 si_knight_magician = k.ImpactStrengthMagician()

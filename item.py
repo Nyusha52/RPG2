@@ -4,7 +4,7 @@ import random
 class Item():
 
     def select_item(self):
-        item_list = random.choice(("apple", "sword", "monster", "archer", "magician book", "monster", "monster", "monster", "totem"))
+        item_list = random.choice(("apple", "arrows", "sword", "archer", "magician book", "monster", "monster", "monster", "totem"))
         return item_list
 
     def sword(self):
@@ -18,6 +18,10 @@ class Item():
     def archer(self):
         archer = random.randint(10, 100)
         return archer
+
+    def arrow(self):
+        arrow = True
+        return arrow
 
     def totem(self):
         pass

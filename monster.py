@@ -8,7 +8,7 @@ class Monster():
     type = None
 
     def ImpactStrength(self):
-        Monster.impact_strength_monster = random.randint(5, 10)
+        Monster.impact_strength_monster = random.randint(5, 20)
         return Monster.impact_strength_monster
 
     def Hp(self):
