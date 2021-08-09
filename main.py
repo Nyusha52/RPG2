@@ -2,6 +2,7 @@ from item import Item
 from knight import Knight
 from monster import Monster
 
+
 def game() -> None:
     """Игра в рыцаря."""
     i = Item()
@@ -52,12 +53,12 @@ def game() -> None:
                 new_archer = number
                 if new_archer == "1":
                     Knight.have_weapon['impact_strength_archer'] = archer
-            if knight_type == "Archer" and Knight.have_weapon['impact_strength_archer'] != None:
+            if knight_type == "Archer" and Knight.have_weapon['impact_strength_archer'] is not None:
                 Knight.have_weapon['impact_strength_archer'] = Knight.have_weapon['impact_strength_archer'] + 10
                 print(
                     f"ЛУК.сила удара увеличена на 10 и равна {Knight.have_weapon['impact_strength_archer']} "
                 )
-            if knight_type == "Archer" and Knight.have_weapon['impact_strength_archer'] == None:
+            if knight_type == "Archer" and Knight.have_weapon['impact_strength_archer'] is None:
                 archer = i.archer()
                 print(
                     f"ЛУК.его сила удара равна {archer} \n"
@@ -69,10 +70,8 @@ def game() -> None:
                 if new_archer == "1":
                     Knight.have_weapon['impact_strength_archer'] = archer
         if move == "arrows":
-            if Knight.have_weapon['impact_strength_arrow'] == None:
-                print(
-                    f"Стрелы. забрать - 1 или отказаться - 2."
-                )
+            if Knight.have_weapon['impact_strength_arrow'] is None:
+                print("Стрелы. забрать - 1 или отказаться - 2.")
                 number = i.new_thing()
                 if number == "1":
                     Knight.have_weapon['impact_strength_arrow'] = i.arrow()
@@ -88,12 +87,12 @@ def game() -> None:
                 new_book = number
                 if new_book == "1":
                     Knight.have_weapon['impact_strength_magician'] = magician_book
-            if knight_type == "Magician" and Knight.have_weapon['impact_strength_magician'] != None:
+            if knight_type == "Magician" and Knight.have_weapon['impact_strength_magician'] is not None:
                 Knight.have_weapon['impact_strength_magician'] += 10
                 print(
                     f"КНИГА .сила удара увеличена на 10 и равна {Knight.have_weapon['impact_strength_magician']} "
                 )
-            if knight_type == "Magician" and Knight.have_weapon['impact_strength_magician'] == None:
+            if knight_type == "Magician" and Knight.have_weapon['impact_strength_magician'] is None:
                 magician_book = i.magician_book()
                 print(
                     f"КНИГА: сила удара равна {magician_book} \n"
@@ -106,16 +105,13 @@ def game() -> None:
                     Knight.have_weapon['impact_strength_magician'] = magician_book
         if move == "totem":
             print(
-                f"ТОТЕМ"
-                f"забрать - 1 или отказаться - 2"
+                "ТОТЕМ забрать - 1 или отказаться - 2"
             )
             totem = i.new_thing()
             new_totem = totem
             if new_totem == "1":
                 i.totem_safe(hp_knight)
-                print(
-                    f"вы взяли тотем"
-                )
+                print("вы взяли тотем")
         if move == "monster":
             m = Monster()
             hp_monster = m.Hp()
@@ -131,20 +127,17 @@ def game() -> None:
             number = i.new_wor()
             wor = number
             if wor == "3":
-                if Item.have_totem["hp_knight_totem"] != None:
+                if Item.have_totem["hp_knight_totem"] is not None:
                     Monster.monster_counter = Item.have_totem["monster_counter_safe"]
                     hp_knight = Item.have_totem["hp_knight_totem"]
                     Knight.have_weapon['impact_strength_magician'] = Item.have_totem["impact_strength_magician"]
                     Knight.have_weapon['impact_strength_archer'] = Item.have_totem["impact_strength_archer"]
                     Knight.have_weapon['impact_strength_arrow'] = Item.have_totem["impact_strength_arrow"]
                     Knight.have_weapon['impact_strength_war'] = Item.have_totem["impact_strength_war"]
-                    print ('тотем использован')
+                    print('тотем использован')
                     i.totem_del()
-                    print(Item.have_totem["hp_knight_totem"])
                 else:
-                    print(
-                        f"У вас нет тотема"
-                    )
+                    print("У вас нет тотема")
                     number = i.new_wor()
                     wor = number
             if wor == "1":
@@ -154,7 +147,7 @@ def game() -> None:
                     print(f"ваше оружие меч {si_knight}")
                 if knight_weapon == 'Archer':
                     si_knight = k.have_weapon["impact_strength_archer"]
-                    print( f"ваше оружие лук {si_knight}" )
+                    print(f"ваше оружие лук {si_knight}")
                 if knight_weapon == 'Magician':
                     si_knight = k.have_weapon["impact_strength_archer"]
                     print(f"ваше оружие книга {si_knight}")
@@ -164,10 +157,10 @@ def game() -> None:
                         if monster_type == knight_type:
                             knight_dodged = i.knight_dodged()
                             if knight_dodged < 6:
-                                print(f"Вы НЕ увернулись от удара")
+                                print("Вы НЕ увернулись от удара")
                                 hp_knight = hp_knight - msi
                             else:
-                                print(f"Вы увернулись от удара")
+                                print("Вы увернулись от удара")
                         else:
                             hp_knight = hp_knight - msi
                 Monster.monster_counter += 1
@@ -176,5 +169,6 @@ def game() -> None:
     else:
         print("ПОРАЖЕНИЕ")
     exit()
+
 
 game()
