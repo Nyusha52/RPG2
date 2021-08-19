@@ -29,8 +29,8 @@ class Knight():
 
     def Hp(self) -> int:
         """Здоровье рыцаря."""
-        Knight.hp = random.randint(50, 100)
-        return Knight.hp
+        hp = random.randint(50, 100)
+        return hp
 
     def type_attack_knight(self) -> str:
         """Тип рыцаря."""
@@ -40,12 +40,12 @@ class Knight():
             print("Вы ввели недопустимое значение")
             x = input("1 - Warrior, 2- Magician, 3 - Archer:")
         if x == '1':
-            Knight.type = 'Warrior'
+            type = 'Warrior'
         if x == '2':
-            Knight.type = 'Magician'
+            type = 'Magician'
         if x == '3':
-            Knight.type = 'Archer'
-        return Knight.type
+            type = 'Archer'
+        return type
 
     def type_attack_knight_war(self) -> str:
         """Оружие, которым мы сейчас будем атаковать."""
@@ -75,14 +75,14 @@ class Knight():
                 print("Вы ввели недопустимое значение")
                 x = input("1 - Warrior, 2- Magician, 3 - Archer:")
         if x == "1":
-            Knight.attak = 'Warrior'
+            attak = 'Warrior'
         if x == "2":
-            Knight.attak = 'Magician'
+            attak = 'Magician'
         if x == "3":
-            Knight.attak = 'Archer'
-        return Knight.attak
+            attak = 'Archer'
+        return attak
 
     def hp_plus(self) -> int:
         """Прибавление здоровья при выпадении яблока."""
-        Knight.hp_plus = random.randint(0, 10)
-        return Knight.hp_plus
+        hp_plus = random.randint(0, 10)
+        return hp_plus
